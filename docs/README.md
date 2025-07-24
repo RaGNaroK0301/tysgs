@@ -8,7 +8,7 @@
     <summary>
         <strong>L</strong>
     </summary>
-    <a href=pages/刘备.md>刘备</a>
+    <a href=pages/#/刘备.md>刘备</a>
 </details>
 
 <p></p>
@@ -18,7 +18,7 @@
     <summary>
         <strong>C</strong>
     </summary>
-    <a href=pages/曹操.md>曹操</a>
+    <a href=pages/#/曹操.md>曹操</a>
 </details>
 
 <p></p>
@@ -28,5 +28,5 @@
     <summary>
         <strong>S</strong>
     </summary>
-    <a href=pages/孙权.md>孙权</a>
+    <a href=pages/#/孙权.md>孙权</a>
 </details>
