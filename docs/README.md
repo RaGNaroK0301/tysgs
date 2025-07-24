@@ -16,18 +16,18 @@
 <p></p>
 
 <details>
-  <summary><strong>L</strong></summary>
-    
-  [刘备](pages/刘备.md)
-  
+<summary><strong>L</strong></summary>
+
+[刘备](pages/刘备.md)
+
 </details>
 
 <p></p>
 <p></p>
 
 <details>
-  <summary><strong>S</strong></summary>
-    
-  [孙权](pages/孙权.md)
-  
+<summary><strong>S</strong></summary>
+
+[孙权](pages/孙权.md)
+
 </details>
