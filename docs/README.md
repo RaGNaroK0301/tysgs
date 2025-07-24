@@ -6,10 +6,10 @@
 
 
 <details>
-  <summary><strong>C</strong></summary>
-    
-  [曹操](pages/曹操.md)
-  
+<summary><strong>C</strong></summary>
+
+[曹操](pages/曹操.md)
+
 </details>
 
 <p></p>
