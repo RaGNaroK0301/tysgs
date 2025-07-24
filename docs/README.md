@@ -4,11 +4,14 @@
 
 <pre>所有武将根据首字母排列, 你可以展开首字母或点击左上角搜索武将名/技能名</pre>
 
+
 <details>
     <summary>
-        <strong>L</strong>
+        <strong>C</strong>
     </summary>
-    <a href=pages/#/刘备.md>刘备</a>
+    
+    [曹操](pages/曹操.md)
+    
 </details>
 
 <p></p>
@@ -16,9 +19,11 @@
 
 <details>
     <summary>
-        <strong>C</strong>
+        <strong>L</strong>
     </summary>
-    <a href=pages/#/曹操.md>曹操</a>
+    
+    [刘备](pages/刘备.md)
+    
 </details>
 
 <p></p>
@@ -28,5 +33,7 @@
     <summary>
         <strong>S</strong>
     </summary>
-    <a href=pages/#/孙权.md>孙权</a>
+    
+    [孙权](pages/孙权.md)
+    
 </details>
