@@ -8,7 +8,7 @@
 <details>
   <summary><strong>C</strong></summary>
     
-  [曹操](../pages/曹操.md)
+  [曹操](./pages/曹操.md)
   
 </details>
 
@@ -18,7 +18,7 @@
 <details>
   <summary><strong>L</strong></summary>
     
-  [刘备](../pages/刘备.md)
+  [刘备](./pages/刘备.md)
   
 </details>
 
@@ -28,6 +28,6 @@
 <details>
   <summary><strong>S</strong></summary>
     
-  [孙权](../pages/孙权.md)
+  [孙权](./pages/孙权.md)
   
 </details>
