@@ -8,7 +8,7 @@
 <details>
     <summary><strong>C</strong></summary>
     
-    [曹操](pages/曹操.md)
+    ![曹操](pages/曹操.md)
     
 </details>
 
