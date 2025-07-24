@@ -6,9 +6,7 @@
 
 
 <details>
-    <summary>
-        <strong>C</strong>
-    </summary>
+    <summary><strong>C</strong></summary>
     
     [曹操](pages/曹操.md)
     
@@ -36,4 +34,10 @@
     
     [孙权](pages/孙权.md)
     
+</details>
+
+
+<details>
+  <summary>Click to open the link</summary>
+  You can visit [Google](https://www.google.com) here!
 </details>
