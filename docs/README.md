@@ -1,33 +1,14 @@
 # 欢迎来到桃园三国杀
 
-这里有所有桃园群三国杀的武将技能和图片。
+<pre>
+<h4>桃园三国杀的武将技能和图片都在这里
 
-<pre>所有武将根据首字母排列, 你可以展开首字母或点击左上角搜索武将名/技能名</pre>
+左边栏有武将列表，根据势力分组并按首字母排列
 
+也可以在左上角搜索🔍武将名
+</h4>
+</pre>
 
-<details>
-<summary><strong>C</strong></summary>
+<pre><h5>让我们一起杀起来！！！</h5></pre>
 
-[曹操](pages/曹操.md)
-
-</details>
-
-<p></p>
-<p></p>
-
-<details>
-<summary><strong>L</strong></summary>
-
-[刘备](pages/刘备.md)
-
-</details>
-
-<p></p>
-<p></p>
-
-<details>
-<summary><strong>S</strong></summary>
-
-[孙权](pages/孙权.md)
-
-</details>
+![niuye](niuye.png)
