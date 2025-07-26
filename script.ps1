@@ -36,4 +36,4 @@ $sidebarmd += "---"
 
 $sidebarmd | Out-File -FilePath ".\docs\_sidebar.md" -Encoding utf8 -Force -Confirm:$false
 
-# $comment = "update "; cd $projectPath; git add .; git commit -m $comment; git push origin master
+# $comment = "update "; cd $projectPath; git add .; git commit -m $comment; git push origin main
