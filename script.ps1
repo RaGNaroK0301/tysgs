@@ -11,11 +11,13 @@ echo "tysgs assets path: $assetsPath"
 $folderList = (ls $assetsPath | ? { $_.PSIsContainer }).Name    #晋
 foreach ($folder in $folderList) {
     $folderPath = Join-Path -Path $assetsPath $folder
+
     $baseList = (ls $folderPath).BaseName
     $fileList = (ls $folderPath).Name
+    $generalCount = (ls $folderPath).Count
 
     $sidebarmd += "---`r`n"
-    $sidebarmd += "  * $folder"
+    $sidebarmd += "  * $folder ($generalCount)"
 
     for ($i = 0; $i -lt $baseList.Count; $i++) {
         $fileName = $fileList[$i]   #晋-杜预001.jfif
