@@ -11,22 +11,22 @@ echo "tysgs assets path: $assetsPath"
 $folderList = (ls $assetsPath | ? { $_.PSIsContainer }).Name    #晋
 foreach ($folder in $folderList) {
     $folderPath = Join-Path -Path $assetsPath $folder
-    $generalList = (ls $folderPath).BaseName
+    $baseList = (ls $folderPath).BaseName
     $fileList = (ls $folderPath).Name
 
     $sidebarmd += "---`r`n"
     $sidebarmd += "  * $folder"
 
-    for ($i = 0; $i -lt $generalList.Count; $i++) {
+    for ($i = 0; $i -lt $baseList.Count; $i++) {
         $fileName = $fileList[$i]   #晋-杜预001.jfif
-        $generalName = $generalList[$i].Split('-')[1]     #杜预001
-        $mdName = $generalName + ".md"
-        $sidebarmd += "    * [$generalName](pages/$mdName)"
+        $baseName = $baseList[$i]     #晋-杜预001
+        $mdName = $baseName + ".md"
+        $sidebarmd += "    * [$baseName](pages/$mdName)"
 
-        $generalMd = @()
-        $generalMd += "# $generalName`r`n"
-        $generalMd += "![$generalName](../assets/$fileName)`r`n"
-        $generalMd | Out-File -FilePath ".\docs\pages\$mdName" -Encoding utf8 -Force -Confirm:$false
+        $baseMd = @()
+        $baseMd += "# $baseName`r`n"
+        $baseMd += "![$baseName](../assets/$fileName)`r`n"
+        $baseMd | Out-File -FilePath ".\docs\pages\$mdName" -Encoding utf8 -Force -Confirm:$false
     }
 
    # $sidebarmd += "`r"
