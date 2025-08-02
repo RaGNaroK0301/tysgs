@@ -40,19 +40,3 @@ $sidebarmd | Out-File -FilePath ".\docs\_sidebar.md" -Encoding utf8 -Force -Conf
 
 # $comment = "update "; cd $projectPath; git add .; git commit -m $comment; git push origin main
 
-<#
-有专属武器的武将
-
-群-彻里吉001
-群-冯妤001
-群-南华老仙002
-群-司马徽001
-群-王允001
-群-袁绍002
-蜀-蒲元001
-魏-刘晔001
-魏-刘晔002
-魏-夏侯恩001
-吴-张奋001
-吴-张奋002
-#>
