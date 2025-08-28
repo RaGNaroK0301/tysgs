@@ -66,5 +66,5 @@ foreach ($file in Get-ChildItem -Path $patchPath) {
 }
 
 
-# cd "D:\Repository\MyProject\tysgs"; $comment = "update "; cd $projectPath; git add .; git commit -m $comment; git push origin main
+# cd "D:\Repository\MyProject\tysgs"; $comment = "update "; cd $projectPath; git add .; git commit -m $comment; git push origin master
 
