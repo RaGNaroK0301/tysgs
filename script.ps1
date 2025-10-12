@@ -1,4 +1,4 @@
-$patchPath = "$home\desktop\修订7"
+$patchPath = "$home\desktop\修订8"
 cd $patchPath
 
 $projectPath = "D:\Repository\MyProject\tysgs"
@@ -9,9 +9,9 @@ $pagesPath = Join-Path $projectPath "docs\pages"
 foreach ($file in Get-ChildItem -Path $patchPath) {
     if ($file.Name -match "^技标") {
         $jiBiao = $true
-        $newName = $file.Name.replace("技标-","").replace("技标-","").replace("】【","-").replace("】","-").replace("【","-").trimend("-")
+        $newName = $file.Name.replace("技标-","").replace("技标-","").replace("】【","-").replace("】","-").replace("【","-").replace("-.",".")
         $file | Rename-Item -NewName $newName
-        echo "Renamed $($file.Name) to $newName"
+        Write-Host "Renamed $($file.Name) to $newName" -ForegroundColor Green
 
         $fileBaseName = $newName.split(".")[0]
         $fileExt = ".jpg"
@@ -25,33 +25,33 @@ foreach ($file in Get-ChildItem -Path $patchPath) {
 
     # 如果jfif在assets里已存在
     if ((Test-Path $(Join-Path $assetsPath $fileName)) -eq $true) {
-        echo "$fileName already exists in $assetsPath, overwriting..."
+        Write-Host "$fileName already exists in $assetsPath, overwriting..." -ForegroundColor Green
         Copy-Item -Path $fileName -Destination $assetsPath -Force
     }
 
     # 如果jfif在assets里不存在但jpg存在
     if (((Test-Path $(Join-Path $assetsPath $fileName)) -eq $false) -and ((Test-Path $(Join-Path $assetsPath $fileBaseName$fileExt)) -eq $true)) {
-        echo "$fileBaseName$fileExt exists, remove and copy jfif"
+        Write-Host "$fileBaseName$fileExt exists, remove and copy jfif" -ForegroundColor Green
         Copy-Item -Path $fileName -Destination $assetsPath -Force
         Remove-Item -Path $(Join-Path $assetsPath $fileBaseName$fileExt) -Force
 
         #修改md文件
         Get-Content $("$pagesPath\$fileBaseName" + ".md") | ForEach-Object { $_ -replace ".jpg",".jfif" } | Set-Content $("$pagesPath\$fileBaseName" + ".md")
-        echo "Updated $fileBaseName md to reference jfif"
+        Write-Host "Updated $fileBaseName md to reference jfif" -ForegroundColor Green
     }
 
     # 如果jfif在assets里不存在jpg也不存在
     if (((Test-Path $(Join-Path $assetsPath $fileName)) -eq $false) -and ((Test-Path $(Join-Path $assetsPath $fileBaseName$fileExt)) -eq $false)) {
-        echo "$fileName does not exist, copying..."
+        Write-Host "$fileName does not exist, copying..." -ForegroundColor Green
         Copy-Item -Path $fileName -Destination $assetsPath -Force
 
         if ($jiBiao -eq $true) {
-            echo "手动加技标到md里"
+            Write-Host "手动加技标到md里" -ForegroundColor Magenta
             continue
         }
 
         #增加md文件
-        New-Item -Path $("$pagesPath\$fileBaseName" + ".md") -ItemType File -Force
+        New-Item -Path $("$pagesPath\$fileBaseName" + ".md") -ItemType File -Force | Out-Null
 
         $mdContent = @"
 # $fileBaseName
@@ -60,8 +60,8 @@ foreach ($file in Get-ChildItem -Path $patchPath) {
     
 "@
         $mdContent | Set-Content -Path $("$pagesPath\$fileBaseName" + ".md")
-        echo "Created new md file for $fileBaseName"
-        echo "手动加到_sidebar里"
+        Write-Host "Created new md file for $fileBaseName" -ForegroundColor Green
+        Write-Host "手动加到_sidebar里" -ForegroundColor Magenta
     }
 }
 
