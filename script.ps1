@@ -69,6 +69,36 @@ foreach ($file in Get-ChildItem -Path $patchPath) {
 <#
 
 cd "D:\Repository\MyProject\tysgs"
+
+$jin_count = (gci .\assets\ | ? {($_.BaseName -notmatch "晋-.*?-.*") -and ($_.BaseName -match "晋-.*?\d{3}") -and ($_.BaseName -notmatch "晋-神.*?\d{3}")}).count
+$qun_count = (gci .\assets\ | ? {($_.BaseName -notmatch "群-.*?-.*") -and ($_.BaseName -match "群-.*?\d{3}") -and ($_.BaseName -notmatch "群-神.*?\d{3}")}).count
+$shu_count = (gci .\assets\ | ? {($_.BaseName -notmatch "蜀-.*?-.*") -and ($_.BaseName -match "蜀-.*?\d{3}") -and ($_.BaseName -notmatch "蜀-神.*?\d{3}")}).count
+$wei_count = (gci .\assets\ | ? {($_.BaseName -notmatch "魏-.*?-.*") -and ($_.BaseName -match "魏-.*?\d{3}") -and ($_.BaseName -notmatch "魏-神.*?\d{3}")}).count
+$wu_count = (gci .\assets\ | ? {($_.BaseName -notmatch "吴-.*?-.*") -and ($_.BaseName -match "吴-.*?\d{3}") -and ($_.BaseName -notmatch "吴-神.*?\d{3}")}).count
+$shen_count = (gci .\assets\ | ? {($_.BaseName -match "^*-神.*?\d{3}") -and ($_.BaseName -notmatch "^*-神.*?-.*")}).count
+Write-Host "晋 count: $jin_count"
+Write-Host "群 count: $qun_count"
+Write-Host "蜀 count: $shu_count"
+Write-Host "魏 count: $wei_count"
+Write-Host "吴 count: $wu_count"
+Write-Host "神 count: $shen_count"
+
+$sidebarContent = Get-Content .\docs\_sidebar.md -Raw
+$jin_pattern = "  \* 晋 \(\d+\)"
+$qun_pattern = "  \* 群 \(\d+\)"
+$shu_pattern = "  \* 蜀 \(\d+\)"
+$wei_pattern = "  \* 魏 \(\d+\)"
+$wu_pattern = "  \* 吴 \(\d+\)"
+$shen_pattern = "  \* 神 \(\d+\)"
+$sidebarContent = $sidebarContent -replace $jin_pattern, "  * 晋 ($jin_count)"
+$sidebarContent = $sidebarContent -replace $qun_pattern, "  * 群 ($qun_count)"
+$sidebarContent = $sidebarContent -replace $shu_pattern, "  * 蜀 ($shu_count)"
+$sidebarContent = $sidebarContent -replace $wei_pattern, "  * 魏 ($wei_count)"
+$sidebarContent = $sidebarContent -replace $wu_pattern, "  * 吴 ($wu_count)"
+$sidebarContent = $sidebarContent -replace $shen_pattern, "  * 神 ($shen_count)"
+$sidebarContent | Set-Content .\docs\_sidebar.md -Encoding UTF8
+
+
 $comment = "update "; git add .; git commit -m $comment; git push origin master
 
 #>
