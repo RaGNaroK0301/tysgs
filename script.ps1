@@ -1,4 +1,4 @@
-$patchPath = "$home\desktop\修订9"
+$patchPath = "$home\desktop\修订10"
 cd $patchPath
 
 $projectPath = "D:\Repository\MyProject\tysgs"
@@ -36,7 +36,9 @@ foreach ($file in Get-ChildItem -Path $patchPath) {
         Remove-Item -Path $(Join-Path $assetsPath $fileBaseName$fileExt) -Force
 
         #修改md文件
-        Get-Content $("$pagesPath\$fileBaseName" + ".md") | ForEach-Object { $_ -replace ".jpg",".jfif" } | Set-Content $("$pagesPath\$fileBaseName" + ".md")
+        $content = Get-Content $("$pagesPath\$fileBaseName" + ".md") -Raw
+        $content = $content -replace ".jpg",".jfif"
+        $content = Set-Content $("$pagesPath\$fileBaseName" + ".md")
         Write-Host "Updated $fileBaseName md to reference jfif" -ForegroundColor Green
     }
 
@@ -99,6 +101,6 @@ $sidebarContent = $sidebarContent -replace $shen_pattern, "  * 神 ($shen_count)
 $sidebarContent | Set-Content .\docs\_sidebar.md -Encoding UTF8
 
 
-$comment = "update "; git add .; git commit -m $comment; git push origin master
+$comment = "修订10"; git add .; git commit -m $comment; git push origin master
 
 #>
