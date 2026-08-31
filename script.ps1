@@ -1,4 +1,4 @@
-$patchPath = "$home\desktop\修订14"
+$patchPath = "$home\desktop\修订15"
 cd $patchPath
 
 $projectPath = "D:\Repository\MyProject\tysgs"
