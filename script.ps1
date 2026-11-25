@@ -1,4 +1,4 @@
-$patchPath = "$home\desktop\修订15"
+$patchPath = "$home\desktop\修订16"
 cd $patchPath
 
 $projectPath = "D:\Repository\MyProject\tysgs"
@@ -101,6 +101,6 @@ $sidebarContent = $sidebarContent -replace $shen_pattern, "  * 神 ($shen_count)
 $sidebarContent | Set-Content .\docs\_sidebar.md -Encoding UTF8
 
 
-$comment = "修订14"; git add .; git commit -m $comment; git push origin master
+$comment = "修订16"; git add .; git commit -m $comment; git push origin master
 
 #>
